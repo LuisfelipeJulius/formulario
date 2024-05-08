@@ -16,6 +16,7 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
     var apellido = document.getElementById("apellido").value;
     var celular = document.getElementById("celular").value;
     var departamento = document.getElementById("ciudad").value;
+    var aceptacionTerminos = document.getElementById("agreeCheckbox").checked;
     
     // Construye el objeto de datos
     var datos = {
@@ -25,7 +26,8 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
       municipio: municipio,
       apellido: apellido,
       celular: celular,
-      departamento: departamento
+      departamento: departamento,
+      aceptacionTerminos: aceptacionTerminos
     };
     
     // Envía los datos al webhook
