@@ -23,15 +23,15 @@
     var fechaRegistro = new Date().toLocaleDateString(); // Obtiene solo la fecha
 
     // Obtener la URL actual
-  var paginaActual = window.top.location.href;
-  var origen = "";
-  
-  // Verificar la URL actual
-  if (paginaActual.includes("contegral.co")) {
-    origen = "contegral";
-  } else if (paginaActual.includes("finca.co")) {
-    origen = "finca";
-  }
+    var paginaActual = window.location.href;
+    var origen = "";
+    
+    // Verificar la URL actual
+    if (paginaActual.includes("contegral.co")) {
+      origen = "contegral";
+    } else if (paginaActual.includes("finca.co")) {
+      origen = "finca";
+    }
     
     // Construye el objeto de datos
     var datos = {
