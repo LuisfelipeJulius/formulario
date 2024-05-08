@@ -45,7 +45,7 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
       // Oculta el modal
       spinnerModal.hide();
       // Redirige a la siguiente URL
-      window.location.href = 'https://www.finca.co/';
+      window.location.href = 'https://www.finca.co/jornada-ganadera-mayo-2024/registro-exitoso';
     })
     .catch(function(error) {
       // Oculta el modal
@@ -61,9 +61,9 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
 
   document.addEventListener("DOMContentLoaded", function() {
     // Función para mostrar el popup al hacer clic en el botón "Aceptar términos"
-    document.getElementById("popupTrigger").addEventListener("click", function() {
+    /*document.getElementById("popupTrigger").addEventListener("click", function() {
       document.getElementById("popup").style.display = "block";
-    });
+    });*/
   
     // Función para cerrar el popup y marcar el checkbox al hacer clic en el botón "Cerrar"
     document.getElementById("closePopupButton").addEventListener("click", function() {
