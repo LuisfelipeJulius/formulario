@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Template Stylesheet -->
+      <link rel="stylesheet" href="/asset/formulario.css">
+</head>
+<body>
+        <form id="miFormulario">
+          <div class="row">
+            <!-- Columna 1 -->
+            <div class="col-lg-6">
+              <!-- Nombre -->
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" required>
+              </div>
+              
+               <!-- Correo electrónico -->
+               <div class="mb-3">
+                <label for="correo" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="correo" required>
+              </div>
+
+              <!-- CC o NIT -->
+              <div class="mb-3">
+                <label for="cc_nit" class="form-label">CC o NIT</label>
+                <input type="number" class="form-control" id="cc_nit" required>
+              </div>
+
+               <!-- Municipio -->
+               <div class="mb-3">
+                <label for="municipio" class="form-label">Municipio</label>
+                <select class="form-select" id="municipio" required>
+                  <option value="">Selecciona...</option>
+                  <!-- Aquí puedes agregar las opciones de municipio -->
+                  <option value="1">Municipio 1</option>
+                  <option value="2">Municipio 2</option>
+                  <option value="3">Municipio 3</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Columna 2 -->
+            <div class="col-lg-6">
+                <!-- Apellido -->
+              <div class="mb-3">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido" required>
+              </div>
+             
+              <!-- Celular -->
+              <div class="mb-3">
+                <label for="celular" class="form-label">Celular</label>
+                <input type="number" class="form-control" id="celular" required>
+              </div>
+              <!-- Departamento -->
+              <div class="mb-3">
+                <label for="departamento" class="form-label">Departamento</label>
+                <select class="form-select" id="departamento" required>
+                  <option value="">Selecciona...</option>
+                  <!-- Aquí puedes agregar las opciones de departamento -->
+                  <option value="1">Departamento 1</option>
+                  <option value="2">Departamento 2</option>
+                  <option value="3">Departamento 3</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- Botón de enviar -->
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-finca" id="enviarBtn">Enviar</button>
+          </div>
+        </form>
+
+
+  <!-- Modal -->
+  <div class="modal" id="spinnerModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <!-- Spinner -->
+        <div class="modal-body text-center">
+          <i class="fas fa-spinner fa-spin fa-3x"></i>
+          <p>Un momento por favor...</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+<!-- Bootstrap JS (opcional, si necesitas funcionalidades JS de Bootstrap) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="asset/formulario.js"></script>
+</body>
+</html>
