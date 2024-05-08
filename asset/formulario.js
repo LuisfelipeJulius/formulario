@@ -52,3 +52,34 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
       console.error('Hubo un problema con la petición Fetch:', error);
     });
   });
+
+
+  function Ciudades() {
+    var ciudades = document.getElementById("municipio");
+
+    for (var idx in ciudades) {
+        ciudades.remove(idx);
+    }
+
+    $("#ciudad").append('<option value="">Selecciona tu ciudad</option>')
+
+    var departamento = document.getElementById("departamento").value;
+
+    $.getJSON('/asset/colombia.json', function (json) {
+        for (var item in json) {
+            if (json[item].departamento == departamento) {
+                departamento = item;
+            }
+        }
+        $.each(json[departamento].ciudades, function (key, value) {
+            $("#ciudad").append('<option value="' + value + '">' + value + '</option>');
+        }); // close each() 
+    });
+}
+
+function SoloNumeros(e) {
+    var keynum = window.event ? window.event.keyCode : e.which;
+    if (keynum == 8)
+        return true;
+    return /\d/.test(String.fromCharCode(keynum));
+}
