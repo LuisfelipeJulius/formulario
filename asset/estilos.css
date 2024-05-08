@@ -162,6 +162,14 @@ body {
         @media only screen and (max-width: 600px) 
 {
      
+  .columna_uno{
+    width: 100%;
+  }
+
+  .columna_dos{
+    width: 100%;
+  }
+
 
        
  }
