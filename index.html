@@ -158,7 +158,7 @@ body {
  }
 }
       </style>
-
+<script src="/asset/commom.js" defer></script>
 
 </head>
 <body>
@@ -209,10 +209,11 @@ body {
               <!-- Departamento -->
               <div class="mb-3">
                 <label for="departamento" class="form-label">Departamento</label>
-                <select class="form-select" id="departamento" required>
-                
+                <select class="form-select" id="departamento" name="departamento"
+                ax-required=true ax-required-text="La ciudad es obligatorio" ax-required-position="bottom" required>
+                    <option value="">Selecciona tu departamento</option>
                 </select>
-              </div>
+            </div>
             </div>
           </div>
           <!-- Botón de enviar -->

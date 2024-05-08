@@ -54,32 +54,45 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
   });
 
 
-  function Ciudades() {
-    var ciudades = document.getElementById("municipio");
+ 
 
-    for (var idx in ciudades) {
-        ciudades.remove(idx);
-    }
+  // funcion departamento ciudad
 
-    $("#ciudad").append('<option value="">Selecciona tu ciudad</option>')
+  document.addEventListener("DOMContentLoaded", function () {
+    var departamentoSelect = document.getElementById("departamento");
+    departamentoSelect.addEventListener("change", cargarCiudades);
 
-    var departamento = document.getElementById("departamento").value;
+    function cargarCiudades() {
+        var ciudadesSelect = document.getElementById("municipio");
+        var departamento = departamentoSelect.value;
 
-    $.getJSON('/asset/colombia.json', function (json) {
-        for (var item in json) {
-            if (json[item].departamento == departamento) {
-                departamento = item;
+        // Limpiar opciones anteriores
+        ciudadesSelect.innerHTML = '<option value="">Selecciona tu ciudad</option>';
+
+        // Obtener el JSON de manera asíncrona
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "/asset/colombia.json", true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var json = JSON.parse(xhr.responseText);
+
+                // Encontrar el departamento en el JSON
+                var deptoEncontrado = json.find(function (item) {
+                    return item.departamento === departamento;
+                });
+
+                if (deptoEncontrado) {
+                    // Agregar las ciudades correspondientes al departamento seleccionado
+                    deptoEncontrado.ciudades.forEach(function (ciudad) {
+                        var option = document.createElement("option");
+                        option.value = ciudad;
+                        option.text = ciudad;
+                        ciudadesSelect.appendChild(option);
+                    });
+                }
             }
-        }
-        $.each(json[departamento].ciudades, function (key, value) {
-            $("#ciudad").append('<option value="' + value + '">' + value + '</option>');
-        }); // close each() 
-    });
-}
+        };
+        xhr.send();
+    }
+});
 
-function SoloNumeros(e) {
-    var keynum = window.event ? window.event.keyCode : e.which;
-    if (keynum == 8)
-        return true;
-    return /\d/.test(String.fromCharCode(keynum));
-}
