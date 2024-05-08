@@ -56,43 +56,4 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
 
  
 
-  // funcion departamento ciudad
-
-  document.addEventListener("DOMContentLoaded", function () {
-    var departamentoSelect = document.getElementById("departamento");
-    departamentoSelect.addEventListener("change", cargarCiudades);
-
-    function cargarCiudades() {
-        var ciudadesSelect = document.getElementById("municipio");
-        var departamento = departamentoSelect.value;
-
-        // Limpiar opciones anteriores
-        ciudadesSelect.innerHTML = '<option value="">Selecciona tu ciudad</option>';
-
-        // Obtener el JSON de manera asíncrona
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "/asset/colombia.json", true);
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                var json = JSON.parse(xhr.responseText);
-
-                // Encontrar el departamento en el JSON
-                var deptoEncontrado = json.find(function (item) {
-                    return item.departamento === departamento;
-                });
-
-                if (deptoEncontrado) {
-                    // Agregar las ciudades correspondientes al departamento seleccionado
-                    deptoEncontrado.ciudades.forEach(function (ciudad) {
-                        var option = document.createElement("option");
-                        option.value = ciudad;
-                        option.text = ciudad;
-                        ciudadesSelect.appendChild(option);
-                    });
-                }
-            }
-        };
-        xhr.send();
-    }
-});
-
+ 
