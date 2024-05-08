@@ -57,6 +57,10 @@
     });
   });
 
+  // Habilitar el botón de enviar cuando se marque el checkbox de aceptación
+  document.getElementById("agreeCheckbox").addEventListener("change", function() {
+    document.getElementById("enviarBtn").disabled = !this.checked;
+  });
   
   
 
