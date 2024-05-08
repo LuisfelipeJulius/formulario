@@ -18,6 +18,9 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
   var departamento = document.getElementById("ciudad").value;
   var aceptacionTerminos = document.getElementById("agreeCheckbox").checked;
   
+  // Obtiene la fecha actual
+  var fechaRegistro = new Date().toLocaleDateString(); // Obtiene solo la fecha
+  
   // Construye el objeto de datos
   var datos = {
     nombre: nombre,
@@ -27,7 +30,8 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
     apellido: apellido,
     celular: celular,
     departamento: departamento,
-    aceptacionTerminos: aceptacionTerminos
+    aceptacionTerminos: aceptacionTerminos,
+    fechaRegistro: fechaRegistro // Agrega la fecha de registro
   };
   
   // Envía los datos al webhook
@@ -51,7 +55,6 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
     console.error('Hubo un problema con la petición Fetch:', error);
   });
 });
-
 
 
   // popup  tratamiento de datos
