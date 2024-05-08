@@ -12,10 +12,10 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
     var nombre = document.getElementById("nombre").value;
     var correo = document.getElementById("correo").value;
     var cc_nit = document.getElementById("cc_nit").value;
-    var municipio = document.getElementById("ciudad").value;
+    var municipio = document.getElementById("cliente").value;
     var apellido = document.getElementById("apellido").value;
     var celular = document.getElementById("celular").value;
-    var departamento = document.getElementById("departamento").value;
+    var departamento = document.getElementById("ciudad").value;
     
     // Construye el objeto de datos
     var datos = {
@@ -53,6 +53,32 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
     });
   });
 
+
+
+  // popup  tratamiento de datos
+
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("popupTrigger").addEventListener("click", function() {
+      document.getElementById("popup").style.display = "block";
+    });
+  
+    document.getElementById("closePopupButton").addEventListener("click", function() {
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("agreeCheckbox").checked = true;
+    });
+  
+    document.getElementById("acceptButton").addEventListener("click", function() {
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("agreeCheckbox").checked = true;
+      document.getElementById("enviarBtn").disabled = false;
+    });
+  
+    document.getElementById("miFormulario").addEventListener("submit", function(event) {
+      event.preventDefault(); // Evitar el envío del formulario por defecto
+      // Aquí puedes agregar la lógica para enviar los datos del formulario
+    });
+  });
+  
 
  
 

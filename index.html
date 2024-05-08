@@ -38,8 +38,13 @@
 
                <!-- Ciudad -->
                <div class="mb-3">
-                <label for="ciudad" class="form-label">Ciudad</label>
-                <select class="form-select" id="ciudad" required>
+                <label for="cliente" class="form-label">Eres cliente de...</label>
+                <select class="form-select" id="cliente" required>
+
+                  <option value="">Selecciona una opción</option>
+                  <option value="Contegral">Contegral</option>
+                  <option value="Finca">Finca</option>
+                  <option value="Ninguno">Ninguno</option>
                 
                 </select>
               </div>
@@ -60,17 +65,27 @@
               </div>
               <!-- Departamento -->
               <div class="mb-3">
-                <label for="departamento" class="form-label">Departamento</label>
-                <select class="form-select" id="departamento" name="departamento" required>
+                <label for="ciudad" class="form-label">Evento al que vas a asistir</label>
+                <select class="form-select" id="ciudad" name="ciudad" required>
+
+                  <option value="">Selecciona una ciudad</option>
+                  <option value="Bogotá">Bogotá</option>
+                  <option value="Montería">Montería</option>
+                  <option value="Villavicencio">Villavicencio</option>
                   
                 </select>
             </div>
             </div>
           </div>
-          <!-- Botón de enviar -->
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary btn-finca" id="enviarBtn">Enviar</button>
-          </div>
+           <!-- Checkbox -->
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="agreeCheckbox">
+      <label class="form-check-label" for="agreeCheckbox" id="popupTrigger">Por favor, confirma que estás de acuerdo con el tratamiento de datos personales y envío de marketing.</label>
+    </div>
+    <!-- Botón de enviar -->
+    <div class="text-center mt-3">
+      <button type="submit" class="btn btn-primary btn-finca" id="enviarBtn" disabled>Enviar</button>
+    </div>
         </form>
 
 
@@ -90,6 +105,33 @@
   </div>
 
 
+  <!-- Popup -->
+<div class="popup" id="popup">
+  <div class="popup-inner">
+    <p>Manifiesto que otorgo autorización a favor de FINCA S.A.S. identificada con NIT 860004828-1 ubicada en Envigado – CR 48 NO 27A SUR 89 en calidad de RESPONSABLE podrá recolectar, tratar, usar, ceder, transferir o transmitir a terceros o encargados en Colombia o en el exterior los datos personales obtenidos a través de la suscripción realizada.</p>
+    <p>He leído la Política de Tratamiento de Datos Personales disponible en el sitio web por ello, consiento y autorizo de manera previa, expresa e inequívoca que mis datos personales sean tratados para el cumplimiento de las siguientes finalidades:</p>
+    <ul>
+      <li>Contactarme</li>
+      <li>Comunicarme campañas publicitarias y mercadeo mediante email marketing, mensajes de texto al celular, contacto telefónico, mensajes emergentes, notificaciones y mensajes publicitarios;</li>
+      <li>Recibir información de los productos y servicios prestados o comercializados por la compañía;</li>
+      <li>Realizar estudios sobre hábitos de consumo y preferencias, evaluar la calidad de los servicios prestados por la compañía;</li>
+      <li>Gestionar trámites (peticiones, quejas y reclamos); y las demás estipulados en la política para el tratamiento de datos personales de la compañía.</li>
+    </ul>
+    <p>Como titular tengo los siguientes derechos:</p>
+    <ul>
+      <li>Acceder en forma gratuita a los datos proporcionados que hayan sido objeto de tratamiento.</li>
+      <li>Solicitar la actualización y rectificación de su información frente a datos parciales, inexactos, incompletos, fraccionados, que induzcan a error, o a aquellos cuyo tratamiento esté prohibido o no haya sido autorizado.</li>
+      <li>Solicitar prueba de la autorización otorgada.</li>
+      <li>Presentar ante la Superintendencia de Industria y Comercio (SIC) o autoridad competente quejas por infracciones a lo dispuesto en la normatividad vigente.</li>
+      <li>Revocar la autorización y/o solicitar la supresión del dato, a menos que exista un deber legal o contractual que haga imperativo conservar la información.</li>
+      <li>Abstenerme de responder las preguntas sobre datos sensibles o sobre datos de las niñas y niños y adolescentes.</li>
+    </ul>
+    <p>Podré ejercer los derechos de consulta, supresión y revocación dirigiendo mi solicitud al correo electrónico <a href="mailto:datospersonales@grupobios.co">datospersonales@grupobios.co</a>.</p>
+    <button type="button" class="btn btn-primary" id="closePopupButton">Cerrar</button>
+    <button type="button" class="btn btn-primary" id="acceptButton">Aceptar el tratamiento de datos personales y envío de marketing</button>
+  </div>
+
+
 
 
 
@@ -98,7 +140,8 @@
 <!-- Bootstrap JS (opcional, si necesitas funcionalidades JS de Bootstrap) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 <script src="asset/formulario.js"></script>
-<script src="asset/ciudades.js"></script>
 </body>
 </html>
