@@ -1,3 +1,5 @@
+// Ejecutar el script después de cargar completamente el DOM
+document.addEventListener("DOMContentLoaded", function() {
   // Evento de envío del formulario
   document.getElementById("miFormulario").addEventListener("submit", function(event) {
     event.preventDefault(); // Evita que el formulario se envíe normalmente
@@ -32,7 +34,7 @@
     } else if (paginaActual.includes("finca.co")) {
       origen = "finca";
     }
-    
+      
     // Construye el objeto de datos
     var datos = {
       nombre: nombre,
@@ -59,7 +61,7 @@
       // Oculta el modal
       spinnerModal.hide();
       // Redirige a la siguiente URL después de enviar el formulario con éxito
-      window.top.location.href = 'https://www.finca.co/jornada-ganadera-mayo-2024/registro-exitoso';
+      window.location.href = 'https://www.finca.co/jornada-ganadera-mayo-2024/registro-exitoso';
     })
     .catch(function(error) {
       // Oculta el modal
@@ -73,9 +75,4 @@
   document.getElementById("agreeCheckbox").addEventListener("change", function() {
     document.getElementById("enviarBtn").disabled = !this.checked;
   });
-  
-  
-
- 
-
- 
+});
