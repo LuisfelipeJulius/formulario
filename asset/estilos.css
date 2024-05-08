@@ -1,0 +1,148 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --verde-finca: #00A650; 
+    --amarillo-finca:#FFDD00;
+    --texto-finca:#707070;
+
+html,
+body {
+
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f6f3f3;
+}
+
+
+        h2,
+        h3,
+        h4,
+        h5,
+        li,
+        ul,
+        p {
+            color: var(--texto-finca);
+            font-family: montserrat, sans-serif;
+            font-weight: 300;
+        }
+
+        .titulo{
+            color: var(--verde-finca);
+            font-family: montserrat, sans-serif;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label{
+            color: var(--verde-finca);
+        }
+
+        .btn-finca{
+            background-color: var(--verde-finca);
+        }
+
+        .formulario{
+            height: 10vh;
+            color: antiquewhite;
+        }
+
+        .form-check-input:checked{
+            background-color: #F7C90A;
+            border-color: #F7C90A;
+        }
+
+        .columna_uno{
+            width: 50vw;
+          }
+  
+          .columna_dos{
+            width: 50vw;
+          }
+
+
+
+/** PREGUNTAS **/
+
+
+  .error-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 9999;
+  }
+  .error-popup-icon {
+    display: inline-block;
+    font-size: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    z-index: 9998; /* Por debajo del spinner */
+  }
+  
+  .spinner-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Por encima del overlay */
+    background-color: white; /* Fondo blanco */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .spinner-popup p {
+    margin-top: 10px;
+  }
+  
+  .loading-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+
+
+
+
+/** MEDIA QUERYS MEDIA **/
+
+ 
+
+
+
+    /** phone **/
+
+        @media only screen and (max-width: 600px) 
+{
+     
+
+       
+ }
+}
