@@ -23,7 +23,7 @@
     var fechaRegistro = new Date().toLocaleDateString(); // Obtiene solo la fecha
 
     // Obtener la URL actual
-  var paginaActual = window.location.href;
+  var paginaActual = window.top.location.href;
   var origen = "";
   
   // Verificar la URL actual
