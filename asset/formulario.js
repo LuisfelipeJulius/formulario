@@ -12,7 +12,7 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
     var nombre = document.getElementById("nombre").value;
     var correo = document.getElementById("correo").value;
     var cc_nit = document.getElementById("cc_nit").value;
-    var municipio = document.getElementById("municipio").value;
+    var municipio = document.getElementById("ciudad").value;
     var apellido = document.getElementById("apellido").value;
     var celular = document.getElementById("celular").value;
     var departamento = document.getElementById("departamento").value;
