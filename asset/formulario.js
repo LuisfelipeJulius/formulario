@@ -87,7 +87,7 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
   // Resto del código del evento de envío del formulario...
 });
 
-<script>
+
   // Manejar el mensaje para mostrar el popup en toda la pantalla
   window.addEventListener('message', function(event) {
     if (event.data.action === 'showPopup') {
@@ -96,7 +96,7 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
       popup.style.display = 'block';
     }
   });
-</script>
+
 
 
 
