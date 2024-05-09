@@ -71,7 +71,7 @@
   // Mostrar el popup cuando se hace clic en el texto de autorización
 document.getElementById("popupTrigger").addEventListener("click", function() {
   var popup = document.getElementById("popup");
-  popup.style.display = "block";
+  popup.style.display = "flex";
   // Asegurar que el popup se abra en toda la pantalla del sitio
   window.parent.postMessage({action: 'showPopup'}, '*');
 });

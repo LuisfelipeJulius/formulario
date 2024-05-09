@@ -152,6 +152,17 @@ body {
     background-color: white;
     padding: 20px;
     border-radius: 5px;
+    width: 50%;
+    height: 50%;
+    overflow: scroll;
+  }
+
+  #closePopupButton{
+    position: relative;
+    left: 94%;
+    top: 0px;
+    /* right: 100px; */
+    bottom: 0px;
   }
   
 
