@@ -1,78 +1,123 @@
-<form id="miFormulario">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Template Stylesheet -->
+      <link rel="stylesheet" href="asset/estilos.css">
+
+    
+
+
+</head>
+<body>
+  <form id="miFormulario" class="d-flex flex-column">
     <div class="row">
-      <!-- Columna 1 -->
-      <div class="col-lg-6 columna_uno">
-        <!-- Nombre -->
-        <div class="mb-3">
-          <label for="nombre" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="nombre" required>
+        <div class="d-flex flex-wrap cajaFormulario">
+            <!-- Nombre -->
+            <div class="col-lg-6 mb-3 campos">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <!-- Apellido -->
+            <div class="col-lg-6 mb-3 campos">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido" required>
+            </div>
+            <!-- CC o NIT -->
+            <div class="col-lg-6 mb-3 campos">
+                <label for="cc_nit" class="form-label">CC o NIT</label>
+                <input type="number" class="form-control" id="cc_nit" required>
+            </div>
+            <!-- Correo electrónico -->
+            <div class="col-lg-6 mb-3 campos">
+                <label for="correo" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="correo" required>
+            </div>
+            <!-- Celular -->
+            <div class="col-lg-6 mb-3 campos">
+              <label for="celular" class="form-label">Celular</label>
+              <input type="number" class="form-control" id="celular" required>
+            </div>
+            
+            <!-- Ciudad -->
+            <div class="col-lg-6 mb-3 campos">
+                <label for="ciudad" class="form-label">Evento al que vas a asistir</label>
+                <select class="form-select" id="ciudad" name="ciudad" required>
+                    <option value="">Selecciona una ciudad</option>
+                    <option value="Bogotá">Bogotá</option>
+                    <option value="Montería">Montería</option>
+                    <option value="Villavicencio">Villavicencio</option>
+                </select>
+            </div>
+            <!-- Eres invitado de... -->
+            <div class="col-lg-6 mb-3 campos">
+                <label for="cliente" class="form-label">Eres invitado de...</label>
+                <select class="form-select" id="cliente" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="Contegral">Contegral</option>
+                    <option value="Finca">Finca</option>
+                    <option value="abs">ABS</option>
+                    <option value="Ourofino">Ourofino</option>
+                    <option value="Spin">Spin</option>
+                    <option value="Corteva">Corteva</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <!-- Checkbox -->
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="agreeCheckbox">
+        <label class="form-check-label" for="agreeCheckbox" id="popupTrigger">Autorizo el tratamiento de mis datos personales y envío de marketing.</label>
+    </div>
+    <!-- Botón de enviar -->
+    <div class="text-center mt-3">
+        <button type="submit" class="btn btn-primary btn-finca" id="enviarBtn" disabled>Enviar</button>
+    </div>
+</form>
+
+
+
+  <!-- Modal -->
+  <div class="modal" id="spinnerModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <!-- Spinner -->
+        <div class="modal-body text-center">
+          <i class="fas fa-spinner fa-spin fa-3x"></i>
+          <p>Un momento por favor...</p>
         </div>
         
-         <!-- Correo electrónico -->
-         <div class="mb-3">
-          <label for="correo" class="form-label">Correo electrónico</label>
-          <input type="email" class="form-control" id="correo" required>
-        </div>
-
-        <!-- CC o NIT -->
-        <div class="mb-3">
-          <label for="cc_nit" class="form-label">CC o NIT</label>
-          <input type="number" class="form-control" id="cc_nit" required>
-        </div>
-
-         <!-- Ciudad -->
-         <div class="mb-3">
-          <label for="cliente" class="form-label">Eres invitado de...</label>
-          <select class="form-select" id="cliente" required>
-
-            <option value="">Selecciona una opción</option>
-            <option value="Contegral">Contegral</option>
-            <option value="Finca">Finca</option>
-            <option value="abs">ABS</option>
-            <option value="Ourofino">Ourofino</option>
-            <option value="Spin">Spin</option>
-            <option value="Corteva">Corteva</option>
-            <option value="otro">Otro</option>
-          
-          </select>
-        </div>
-      </div>
-
-      <!-- Columna 2 -->
-      <div class="col-lg-6 columna_dos">
-          <!-- Apellido -->
-        <div class="mb-3">
-          <label for="apellido" class="form-label">Apellido</label>
-          <input type="text" class="form-control" id="apellido" required>
-        </div>
-       
-        <!-- Celular -->
-        <div class="mb-3">
-          <label for="celular" class="form-label">Celular</label>
-          <input type="number" class="form-control" id="celular" required>
-        </div>
-        <!-- Departamento -->
-        <div class="mb-3">
-          <label for="ciudad" class="form-label">Evento al que vas a asistir</label>
-          <select class="form-select" id="ciudad" name="ciudad" required>
-
-            <option value="">Selecciona una ciudad</option>
-            <option value="Bogotá">Bogotá</option>
-            <option value="Montería">Montería</option>
-            <option value="Villavicencio">Villavicencio</option>
-            
-          </select>
-      </div>
       </div>
     </div>
-     <!-- Checkbox -->
-<div class="mb-3 form-check">
-<input type="checkbox" class="form-check-input" id="agreeCheckbox">
-<label class="form-check-label" for="agreeCheckbox" id="popupTrigger">Autorizo
-  el tratamiento de mis datos personales y envío de marketing.</label>
-</div>
-<!-- Botón de enviar -->
-<div class="text-center mt-3">
-<button type="submit" class="btn btn-primary btn-finca" id="enviarBtn" disabled>Enviar</button>
-</div>
-  </form>
+  </div>
+
+
+
+  <!-- Popup -->
+
+<div class="popup" id="popup">
+  <div class="popup-inner">
+    <p></p>
+    <button type="button" class="btn btn-primary" id="closePopupButton">Cerrar</button>
+    
+  </div> 
+
+
+
+
+
+
+<!-- Bootstrap JS (opcional, si necesitas funcionalidades JS de Bootstrap) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+<script src="asset/formulario.js"></script>
+</body>
+</html>

@@ -68,6 +68,27 @@
   
 
 
+  // Mostrar el popup cuando se hace clic en el texto de autorización
+document.getElementById("popupTrigger").addEventListener("click", function() {
+  var popup = document.getElementById("popup");
+  popup.style.display = "block";
+  // Asegurar que el popup se abra en toda la pantalla del sitio
+  window.parent.postMessage({action: 'showPopup'}, '*');
+});
+
+// Cerrar el popup cuando se hace clic en el botón de cerrar
+document.getElementById("closePopupButton").addEventListener("click", function() {
+  var popup = document.getElementById("popup");
+  popup.style.display = "none";
+});
+
+// Evento de envío del formulario
+document.getElementById("miFormulario").addEventListener("submit", function(event) {
+  // Resto del código del evento de envío del formulario...
+});
+
+
+
  
 
  
