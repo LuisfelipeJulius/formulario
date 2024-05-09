@@ -1,0 +1,78 @@
+<form id="miFormulario">
+    <div class="row">
+      <!-- Columna 1 -->
+      <div class="col-lg-6 columna_uno">
+        <!-- Nombre -->
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" required>
+        </div>
+        
+         <!-- Correo electrónico -->
+         <div class="mb-3">
+          <label for="correo" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="correo" required>
+        </div>
+
+        <!-- CC o NIT -->
+        <div class="mb-3">
+          <label for="cc_nit" class="form-label">CC o NIT</label>
+          <input type="number" class="form-control" id="cc_nit" required>
+        </div>
+
+         <!-- Ciudad -->
+         <div class="mb-3">
+          <label for="cliente" class="form-label">Eres invitado de...</label>
+          <select class="form-select" id="cliente" required>
+
+            <option value="">Selecciona una opción</option>
+            <option value="Contegral">Contegral</option>
+            <option value="Finca">Finca</option>
+            <option value="abs">ABS</option>
+            <option value="Ourofino">Ourofino</option>
+            <option value="Spin">Spin</option>
+            <option value="Corteva">Corteva</option>
+            <option value="otro">Otro</option>
+          
+          </select>
+        </div>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="col-lg-6 columna_dos">
+          <!-- Apellido -->
+        <div class="mb-3">
+          <label for="apellido" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="apellido" required>
+        </div>
+       
+        <!-- Celular -->
+        <div class="mb-3">
+          <label for="celular" class="form-label">Celular</label>
+          <input type="number" class="form-control" id="celular" required>
+        </div>
+        <!-- Departamento -->
+        <div class="mb-3">
+          <label for="ciudad" class="form-label">Evento al que vas a asistir</label>
+          <select class="form-select" id="ciudad" name="ciudad" required>
+
+            <option value="">Selecciona una ciudad</option>
+            <option value="Bogotá">Bogotá</option>
+            <option value="Montería">Montería</option>
+            <option value="Villavicencio">Villavicencio</option>
+            
+          </select>
+      </div>
+      </div>
+    </div>
+     <!-- Checkbox -->
+<div class="mb-3 form-check">
+<input type="checkbox" class="form-check-input" id="agreeCheckbox">
+<label class="form-check-label" for="agreeCheckbox" id="popupTrigger">Autorizo
+  el tratamiento de mis datos personales y envío de marketing.</label>
+</div>
+<!-- Botón de enviar -->
+<div class="text-center mt-3">
+<button type="submit" class="btn btn-primary btn-finca" id="enviarBtn" disabled>Enviar</button>
+</div>
+  </form>

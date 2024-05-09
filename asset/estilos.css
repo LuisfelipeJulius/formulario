@@ -62,6 +62,13 @@ body {
           }
 
 
+          .campos{
+            padding: 0px 20px;
+            width: 50%;
+          }
+
+          
+
 
 /** PREGUNTAS **/
 
@@ -183,6 +190,17 @@ body {
     height: 10vh;
     color: antiquewhite;
 }
+
+.cajaFormulario{
+  display: flex;
+  flex-direction: column;
+}
+
+.campos{
+  padding: 0px 20px;
+  width: 100%;
+}
+
 
 
        
