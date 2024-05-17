@@ -1,79 +1,5 @@
- 
-document.getElementById("miFormulario").addEventListener("submit", function(event) {
-  event.preventDefault(); // Evita que el formulario se envíe normalmente
-  
-  // Muestra el modal con el spinner
-  var spinnerModal = new bootstrap.Modal(document.getElementById('spinnerModal'), {
-    backdrop: 'static',
-    keyboard: false
-  });
-  spinnerModal.show();
-  
-  // Captura los datos del formulario
-  var nombre = document.getElementById("nombre").value;
-  var correo = document.getElementById("correo").value;
-  var cc_nit = document.getElementById("cc_nit").value;
-  var municipio = document.getElementById("cliente").value;
-  var apellido = document.getElementById("apellido").value;
-  var celular = document.getElementById("celular").value;
-  var departamento = document.getElementById("ciudad").value;
-  var aceptacionTerminos = document.getElementById("agreeCheckbox").checked;
-  
-  // Obtiene la fecha actual
-  var fechaRegistro = new Date().toLocaleDateString(); // Obtiene solo la fecha
 
-  // Establecer manualmente el valor de origen como "Contegral"
-  var origen = "Contegral";
-  
-  // Construye el objeto de datos
-  var datos = {
-    nombre: nombre,
-    correo: correo,
-    cc_nit: cc_nit,
-    municipio: municipio,
-    apellido: apellido,
-    celular: celular,
-    departamento: departamento,
-    aceptacionTerminos: aceptacionTerminos,
-    fechaRegistro: fechaRegistro, // Agrega la fecha de registro
-    origen: origen
-  };
-  
-  // Envía los datos al primer webhook
-  fetch('https://hook.us1.make.com/xuwt7cdemj1oo3w8vj7irmslasx89hqy', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(datos)
-  })
-  .then(function() {
-    // Una vez completada la primera petición, envía los datos al segundo webhook
-    return fetch('https://flow.zoho.com/853430090/flow/webhook/incoming?zapikey=1001.0c3581c41d060b4ab2b20098c3071418.ff7b393604ef953c814cf347174fb508&isdebug=false', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(datos)
-    });
-  })
-  .then(function() {
-    // Oculta el modal
-    spinnerModal.hide();
-    // Redirige a la siguiente URL
-    window.top.location.href  = 'https://www.contegral.co/registro-exitoso';
-  })
-  .catch(function(error) {
-    // Oculta el modal
-    spinnerModal.hide();
-    // Maneja el error, podrías mostrar un mensaje de error o hacer algo más
-    console.error('Hubo un problema con la petición Fetch:', error);
-  });
-});
 
- 
- 
- /*// Evento de envío del formulario
   document.getElementById("miFormulario").addEventListener("submit", function(event) {
     event.preventDefault(); // Evita que el formulario se envíe normalmente
     
@@ -115,7 +41,7 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
     };
     
     // Envía los datos al webhook
-    fetch('https://hook.us1.make.com/xuwt7cdemj1oo3w8vj7irmslasx89hqy', {
+    fetch('https://flow.zoho.com/853430090/flow/webhook/incoming?zapikey=1001.0c3581c41d060b4ab2b20098c3071418.ff7b393604ef953c814cf347174fb508&isdebug=false', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -173,7 +99,7 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
   });
 
 
-*/
+
 
  
 
