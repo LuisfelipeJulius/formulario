@@ -41,7 +41,7 @@
     };
     
     // Envía los datos al webhook
-    fetch('https://flow.zoho.com/853430090/flow/webhook/incoming?zapikey=1001.0c3581c41d060b4ab2b20098c3071418.ff7b393604ef953c814cf347174fb508&isdebug=false', {
+    fetch('https://hook.us1.make.com/2h9pfk5veulf4o25r5wkcj4gi7hnvcqp', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
